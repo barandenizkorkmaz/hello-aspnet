@@ -1,13 +1,13 @@
 {
-  "name": "git-workflow-template",
+  "name": "hello-aspnet",
   "version": "1.0.0",
-  "description": "git-workflow-template",
+  "description": "hello-aspnet",
   "scripts": {
     "prepare": "husky install && dotnet tool restore"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/barandenizkorkmaz/git-workflow-template.git"
+    "url": "git+https://github.com/barandenizkorkmaz/hello-aspnet.git"
   },
   "author": "",
   "license": "MIT",
