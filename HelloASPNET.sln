@@ -1,8 +1,21 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_1_GettingStarted", "_1_GettingStarted", "{2035DD43-1E1E-4E5C-BBD9-27F59A08C4A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyFirstApp", "src\_1_GettingStarted\1CreateFirstASPNETCoreApp\MyFirstApp\MyFirstApp.csproj", "{575D8806-AD3B-4694-8D0F-A5840FFE7069}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{575D8806-AD3B-4694-8D0F-A5840FFE7069} = {2035DD43-1E1E-4E5C-BBD9-27F59A08C4A6}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{575D8806-AD3B-4694-8D0F-A5840FFE7069}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{575D8806-AD3B-4694-8D0F-A5840FFE7069}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{575D8806-AD3B-4694-8D0F-A5840FFE7069}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{575D8806-AD3B-4694-8D0F-A5840FFE7069}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
