@@ -9,7 +9,6 @@ app.Run(async (HttpContext context) =>
     string path = context.Request.Path;
     string method = context.Request.Method;
     
-    
     // Status Codes: Response
     context.Response.StatusCode = 200;
     
@@ -24,6 +23,22 @@ app.Run(async (HttpContext context) =>
     await context.Response.WriteAsync($"<h3>Url: {path}</h3>");
     await context.Response.WriteAsync($"<h3>Method: {method}</h3>");
     // try: localhost:5097/ and localhost:5097/hello and see the difference!
+
+    // Query String
+    if (context.Request.Method == "GET")
+    {
+        if (context.Request.Query.ContainsKey("id"))
+        {
+            string id = context.Request.Query["id"];
+            await context.Response.WriteAsync($"<p>{id}</p>");
+        }
+
+        if (context.Request.Query.ContainsKey("name"))
+        {
+            var name = context.Request.Query["name"];
+            await context.Response.WriteAsync($"<p>{name}</p>");
+        }
+    }
 
 });
 
