@@ -39,6 +39,13 @@ app.Run(async (HttpContext context) =>
             await context.Response.WriteAsync($"<p>{name}</p>");
         }
     }
+    
+    // Request Headers
+    if (context.Request.Headers.ContainsKey("User-Agent"))
+    {
+        string userAgent = context.Request.Headers["User-Agent"];
+        await context.Response.WriteAsync($"<p>{userAgent}</p>");
+    }
 
 });
 
