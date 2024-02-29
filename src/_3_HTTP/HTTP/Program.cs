@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Primitives;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
@@ -45,6 +47,18 @@ app.Run(async (HttpContext context) =>
     {
         string userAgent = context.Request.Headers["User-Agent"];
         await context.Response.WriteAsync($"<p>{userAgent}</p>");
+    }
+    
+    // Request Body
+    StreamReader reader = new StreamReader(context.Request.Body); // Send a raw request body from postman as follows firstName=baran&age=25&age=26
+    string body = await reader.ReadToEndAsync();
+
+    Dictionary<string, StringValues> queryDict = Microsoft.AspNetCore.WebUtilities.QueryHelpers.ParseQuery(body); // StringValues represent multiple values!
+
+    if (queryDict.ContainsKey("firstName"))
+    {
+        string firstName = queryDict["firstName"][0]; // We are interested only in the first value
+        await context.Response.WriteAsync($"<p>First Name: {firstName}</p>");
     }
 
 });
